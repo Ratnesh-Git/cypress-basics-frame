@@ -1,0 +1,10 @@
+{
+
+    "viewportWidth": 1280,
+    "viewportHeight": 720,
+    "chromeWebSecurity": false,
+    "videoCompression": false,
+    "experimentalSourceRewriting": true,
+    "modifyObstructiveCode":false
+    
+}

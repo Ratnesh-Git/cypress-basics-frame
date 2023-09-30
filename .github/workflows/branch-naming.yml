@@ -1,0 +1,17 @@
+name: Branch naming checks
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: deepakputhraya/action-branch-name@master
+        with:
+          regex: '^(?:[a-zA-Z\-]+\/(?:WSB-\d+-)?[a-z0-9\-]+|WFB-\d+-[a-zA-Z0-9\-]+|WSB-\d+-[a-z0-9\-]+|ext/[a-z0-9A-Z-_]+|dependabot\/npm_and_yarn\/[a-z\-\d\.]+)$'
+          allowed_prefixes: 'WSB-,WFB-,uat/,qa/,release/,deploy/,ext/,fix/,WB/,MG/,SM/,MGu/,PK/,MH/,DV/,IB/,dependabot/'
+          ignore: main,prod
+          min_length: 8
